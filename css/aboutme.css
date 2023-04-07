@@ -1,0 +1,37 @@
+body {
+  background-color: #4c4e52;
+  color: white;
+}
+h1,
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  color: #81d8d0;
+}
+img {
+  width: 200px;
+}
+p {
+  font-family: "Georgia", serif;
+}
+p::first-letter {
+  font-size: 1.5rem;
+}
+strong {
+  color: #FFFF00;
+  
+}
+a:link {
+  text-decoration: none;
+  color: #FF0000;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.validator {
+  width: 100px;
+}
+
+.subtitle{
+  color: #FFFF00;
+}
