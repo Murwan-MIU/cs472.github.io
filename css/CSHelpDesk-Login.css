@@ -1,0 +1,260 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f3f3f3;
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+
+}
+
+.container-box {
+    width: 100%;
+    height: 50px;
+    background: #ffff;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.header-class {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-logo {
+    border-left: 1px solid rgba(0, 0, 0, 1);
+    padding-left: 10px;
+}
+
+.uni-image {
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 35px;
+    margin: 0 20px;
+}
+
+
+nav {
+    margin-left: auto;
+}
+
+.header_link {
+    display: inline;
+}
+
+.nav-item {
+    display: inline;
+    max-width: 130px;
+    margin-right: 25px;
+    overflow: hidden;
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #000;
+}
+
+.div-section-class {
+    width: 100%;
+    background-color: #20437f;
+}
+
+.section-class {
+    min-height: 140px;
+    padding: 50px 0;
+}
+
+.welcome-heading {
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.main-section {
+    width: 100%;
+    display: flex;
+    padding: 1%;
+    height: 500%;
+}
+
+.login-section {
+    width: 40%;
+    height: 80%;
+    border-right: 1px solid rgba(151, 151, 151, 0.2);
+    padding: 20px 10%;
+}
+
+.login-h4 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 30px;
+}
+
+
+.submit-section {
+    height: 80%;
+    width: 40%;
+    padding: 20px 10%;
+}
+
+h3 {
+    width: 450px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #666;
+}
+
+h4 {
+    color: #333;
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.login-subtitle {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-wrapper {
+    width: 500px;
+    margin-bottom: 15px;
+    padding: 0 0 20px;
+    border-bottom: 1px dotted rgba(151, 151, 151, 0.3);
+    position: relative;
+}
+
+.azure-btn {
+    width: 100%;
+    display: block;
+    height: 50px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px #dedede;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn-subtext {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    background: #f3f3f3;
+    transform: translateX(-50%);
+}
+
+.label {
+    color: #666;
+}
+
+.input {
+    margin: 5px 0;
+    padding: 10px 0px;
+    width: 500px;
+    outline: 0;
+    display: inline-block;
+    border-radius: 5px;
+    border: solid 1px #e8e8e8;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.login-footer {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.azure-image {
+    display: inline-block;
+    padding-top: 7.5px;
+    max-height: 35px;
+}
+
+.submit-btn {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 18px;
+    border: 0;
+}
+
+.ticket-btn {
+    background: #000;
+    color: #fff;
+    width: auto;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 18px;
+    border: 0;
+    height: auto;
+    padding: 5px 15px;
+    margin: 5px 0 15px;
+}
+
+.footer-class {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #e6e6e6;
+    color: #666;
+}
+
+.upper-footer-class {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+}
+
+.lower-footer-class {
+    width: 100%;
+    padding: 10px 0;
+    text-align: right;
+    background: #fff;
+}
+
+.footer_copyright{
+    margin-left: auto;
+    font-size: 13px;
+}
+
+.happfox {
+    margin-right: 30px;
+    font-size: 12px;
+    color: #666;
+    vertical-align: middle;
+}
+
+.happfox-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #666;
+    font-weight: 700;
+  }
