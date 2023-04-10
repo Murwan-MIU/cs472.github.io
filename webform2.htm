@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .nav-item-marg{
+            margin-left: 50px;
+            border-left: solid 2px #fff;
+            padding-left: 50px;
+        }
+        .myBtn{
+            font-size: 20px;
+        }
+        .myText{
+            color: #fff;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        form {
+			margin: 5px;
+			padding: 20px;
+			border-radius: 10px;
+		}
+        .innerDiv{
+            display: inline-block;
+            width: 35%;
+            margin-right: 5%;
+        }
+        #dateHelp{
+            margin-left: 40%;
+        }
+        .myButtons{
+            margin-left: 57%;
+        }
+        .myBtnSub{
+            margin-right: 5%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MUM Golden Dome Market : : : SRM System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item-marg nav-item">
+                <a class="nav-link" href="#">Products</a>
+              </li>
+              <li class="nav-item-marg nav-item">
+                <a class="nav-link" href="#">Suppliers</a>
+              </li>
+            </ul>
+            <text class="myText" name="" id="" cols="30" rows="10">Hello!</text>
+            <button class="myBtn btn btn-secondary my-2 my-sm-0" type="submit">Sign Out</button>
+          </div>
+        </div>
+      </nav>
+
+      
+      <form action="#" method="POST">
+        <legend>New Product Form</legend>
+        <div>
+            <div class="innerDiv form-group">
+                <label class="col-form-label mt-4" for="productNumber">Product Number</label>
+                <input type="text" class="form-control" id="productNumber">
+              </div>
+              <div class="innerDiv form-group">
+                <label class="col-form-label mt-4" for="name">Name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+        </div>
+        <div>
+            <div class="innerDiv form-group">
+                <label class="col-form-label mt-4" for="unitPrice">Unit Price</label>
+                <input type="text" class="form-control" value="0.0" id="unitPrice">
+              </div>
+        
+            <div class="innerDiv form-group">
+                <label class="col-form-label mt-4" for="quantity">Quantity in stock</label>
+                <input type="text" class="form-control" value="0" id="quantity">
+              </div>
+        </div>
+            
+        <div>
+            <div class="innerDiv form-group">
+            <label for="supplier" class="form-label mt-4">Supplier:</label>
+            <select class="form-select" id="supplier">
+              <option>Select a supplier</option>
+              <option>supplier 1</option>
+              <option>supplier 2</option>
+              <option>supplier 3</option>
+              <option>supplier 4</option>
+            </select>
+            </div>
+          <div class="innerDiv form-group">
+            <label class="col-form-label mt-4" for="dateSupplied">Date supplied</label>
+            <input type="date" class="form-control" id="dateSupplied" aria-describedby="dateHelp">
+            
+          </div>
+        </div>
+        <small id="dateHelp" class="form-text text-muted">Enter a valid Date.</small>
+        
+        <br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="checkbox">
+          <label class="form-check-label" for="checkbox">
+            Check me out
+          </label>
+        </div>
+        <br>
+        <div class="myButtons">
+            <button type="button" class="myBtnSub btn btn-outline-primary">Reset</button>
+        <button type="button" class="myBtnSub btn btn-outline-warning">Cancel</button>
+        <button type="button" class="myBtnSub btn btn-outline-info">Add Product</button>
+        </div>
+        
+  </form>
+</body>
+</html>
