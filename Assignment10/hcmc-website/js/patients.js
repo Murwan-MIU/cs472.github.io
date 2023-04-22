@@ -4,10 +4,13 @@ window.onload = function() {
 
     document.getElementById('btnRegisterPatient').addEventListener("click", btnSubmitFun);
 
-    if(document.getElementById('chkElderlyPatients').checked){
-        chkElderlyPatientsFun();
-    }
     document.getElementById('btnRegisterPatient').addEventListener("click", btnSubmitFun);
+
+    document.getElementById('chkElderlyPatients').onclick = chkElderlyPatientsFun;
+
+    document.getElementById('chkShowOutPatients').onclick = chkElderlyPatientsFun;
+
+
 }
 
 function btnResetFun(){
@@ -65,11 +68,56 @@ function btnSubmitFun(){
 
     tableBody.appendChild(row);
 
+    document.getElementById("patientForm").reset();
+
     event.preventDefault();
 }
 
 function chkElderlyPatientsFun(){
-    console.log(new Date(dateOfBirthText) < new Date("1958-04-21"));
+    let elderlyCheckbox = document.getElementById('chkElderlyPatients');
+    let checkOutCheckbox = document.getElementById('chkShowOutPatients');
+    let table = document.getElementById("patientInfoTable");
+
+    
+    
+    if(elderlyCheckbox.checked && !checkOutCheckbox.checked){
+        for (let i = 1, row; row = table.rows[i]; i++) {
+            if(new Date(row.cells[4].innerText) < new Date("1958-04-21")){
+                row.style.display = "";
+            }else{
+                row.style.display = "none";
+            }
+        }
+    }
+    if(checkOutCheckbox.checked && !elderlyCheckbox.checked){
+        for (let i = 1, row; row = table.rows[i]; i++) {
+            if(row.cells[6].innerText === "YES"){
+                row.style.display = "";
+            }else{
+                row.style.display = "none";
+            }
+        }
+    }
+
+    if(checkOutCheckbox.checked && elderlyCheckbox.checked){
+        for (let i = 1, row; row = table.rows[i]; i++) {
+            if(row.cells[6].innerText === "YES"){
+                if(new Date(row.cells[4].innerText) < new Date("1958-04-21")){
+                row.style.display = "";
+                }else{
+                    row.style.display = "none";
+                }
+            }else{
+                row.style.display = "none";
+            }
+        }
+    }
+
+    if(!checkOutCheckbox.checked && !elderlyCheckbox.checked){
+        for (let i = 1, row; row = table.rows[i]; i++) {
+            row.style.display = "";
+        }
+    }    
 
 }
 
