@@ -18,7 +18,7 @@ let user = {
 
 };
 
-askPassword(user.loginOk.call(user), user.loginFail.call(user));
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
 
 // Question 2
 let group = {
