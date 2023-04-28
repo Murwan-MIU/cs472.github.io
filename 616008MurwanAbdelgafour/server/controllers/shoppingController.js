@@ -28,9 +28,13 @@ exports.getAll = (req, res, next) => {
 }
 
 exports.placeOrder = (req, res, next) => {
-    const items = req.body.cart;
+    const items = JSON.parse(req.body.cart);
     items.forEach(item => {
-        Product.checkEnoughStock(item.prodId, item.quantity);
+        Product.checkEnoughStock(item.id, item.quantity);
     });
-    res.status(200).end();
+    const us = JSON.parse(req.get('User'));
+    const user = User.get(us.username, us.password);
+    user.cart=[];
+    console.log(user);
+    res.status(200).json(user.cart);
 }

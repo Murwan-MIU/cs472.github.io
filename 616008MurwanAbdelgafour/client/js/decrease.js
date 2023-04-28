@@ -30,7 +30,7 @@ async function increment(id) {
     const response = await  fetch("http://localhost:3570/decrease/" + id, setting);
     
     const jsonData = await  response.json();
-    console.log(">>>>>>>>", jsonData);
+    sessionStorage.setItem('cart', JSON.stringify(jsonData));
     const url = `home.htm?data=${encodeURIComponent(JSON.stringify(jsonData))}`;
     window.location.href = url;
 }

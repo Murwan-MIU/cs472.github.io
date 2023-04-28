@@ -34,7 +34,7 @@ async function addToCart(id, name, price) {
     const response = await  fetch("http://localhost:3570/", setting);
     
     const jsonData = await  response.json();
-    console.log(">>>>>>>>", jsonData);
+    sessionStorage.setItem('cart', JSON.stringify(jsonData));
     const url = `home.htm?data=${encodeURIComponent(JSON.stringify(jsonData))}`;
     window.location.href = url;
 }

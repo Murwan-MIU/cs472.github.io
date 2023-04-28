@@ -17,7 +17,7 @@ const checkAuth = (req, res, next) => {
       req.authToken = authToken;
       next();
     } else {
-      res.redirect('/login');
+      res.redirect('/login.htm');
     }
 };
 

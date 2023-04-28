@@ -3,8 +3,8 @@ window.onload = function(){
     var queryString = window.location.search.replace(/^\?/, '');
 
     queryString.split(/\&/).forEach(function(keyValuePair) {
-        var paramName = keyValuePair.replace(/=.*$/, ""); // some decoding is probably necessary
-        var paramValue = keyValuePair.replace(/^[^=]*\=/, ""); // some decoding is probably necessary
+        var paramName = keyValuePair.replace(/=.*$/, "");
+        var paramValue = keyValuePair.replace(/^[^=]*\=/, "");
         GET[paramName] = paramValue;
     });
 
@@ -30,7 +30,7 @@ async function increment(id) {
     const response = await  fetch("http://localhost:3570/increase/" + id, setting);
     
     const jsonData = await  response.json();
-    console.log(">>>>>>>>", jsonData);
+    sessionStorage.setItem('cart', JSON.stringify(jsonData));    
     const url = `home.htm?data=${encodeURIComponent(JSON.stringify(jsonData))}`;
     window.location.href = url;
 }

@@ -66,7 +66,6 @@ class User{
         let index = -1;
         for(let i=0; i<this.cart.length; i++){
             let it = this.cart[i];
-            console.log(">>><<<", id, "&&&", it.id == id);
             if(it.id == id){
                 index = i;
             }
@@ -74,6 +73,10 @@ class User{
         
         if(index > -1){
             this.cart[index].quantity -= 1;
+            if(this.cart[index].quantity == 0){
+                this.cart.splice(index, 1);
+                return this.cart;
+            }
             this.cart[index].total = this.cart[index].quantity * this.cart[index].price;
             return this.cart;
         }else{

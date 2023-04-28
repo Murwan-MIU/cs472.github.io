@@ -1,12 +1,16 @@
 window.onload = function(){
 
+    document.getElementById("logoutBtn").addEventListener("click", logout);
+
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(user);
+    document.getElementById("username").innerText = user.username;
+
     getProducts();
 
-    // Get the value of the "data" parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const dataString = urlParams.get('data');
 
-// Parse the JSON string into an object
     const data = JSON.parse(decodeURIComponent(dataString));
     if(data){
         for(d of data){
@@ -78,10 +82,41 @@ window.onload = function(){
         }
     }
 
-// Use the data in your code
-    
+    document.getElementById("placeOrder").addEventListener("click", placeOrder);
 
 }
+
+function logout(){
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
+    localStorage.removeItem("cart");
+
+    window.location.href = "/login.htm";
+}
+
+async function placeOrder() {
+    console.log("TEST");
+    const authToken = sessionStorage.getItem('authToken');
+    const user = sessionStorage.getItem('user');
+    const cart = sessionStorage.getItem('cart');
+    console.log(JSON.stringify({cart: cart}));
+    const response = await fetch("http://localhost:3570/palce-order", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' ,
+          'Authorization': `Bearer ${authToken}`,
+          'User': user
+        },
+        body: JSON.stringify({cart: cart})
+    });
+    const data = await response.json();
+    console.log("==>",data);
+    sessionStorage.setItem('cart', JSON.stringify(data));    
+    const url = `home.htm?data=${encodeURIComponent(JSON.stringify(data))}`;
+    window.location.href = url;
+
+}
+
 
 async function getProducts() {
     const authToken = sessionStorage.getItem('authToken');
